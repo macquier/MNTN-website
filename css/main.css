@@ -1,0 +1,400 @@
+@import url(./reset.css);
+
+@import url(./../font/stylesheet.css);
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap");
+
+body,
+html {
+  margin: 0 auto;
+  font-family: "Gilroy";
+  background-image: url(./../img/bg.jpg);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-color: #0b1d26;
+  color: #ffffff;
+}
+
+/* Header */
+
+.header {
+  padding-top: 64px;
+  padding-bottom: 843px;
+}
+
+.nav {
+  padding-bottom: 198px;
+}
+
+.container-wide {
+  max-width: 1790px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.header__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: "Playfair Display", serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38px;
+  letter-spacing: 0.01em;
+}
+
+.nav__list {
+  display: flex;
+}
+
+.nav__item {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.nav__item + .nav__item {
+  margin-left: 40px;
+}
+
+.nav__item-link {
+  color: #ffffff;
+
+  position: relative;
+  transition: color 0.2s ease-in;
+}
+
+.nav__item-link:hover {
+  color: #fbd784;
+}
+
+.nav__item-link::after {
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+
+  display: block;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  opacity: 0;
+
+  transition: all 0.2s ease-in;
+}
+
+.nav__item-link:hover::after {
+  bottom: -5px;
+  opacity: 1;
+  background-color: #fbd784;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  transition: color 0.2s ease-in;
+}
+
+.user__icon {
+  height: 20px;
+  width: 20px;
+}
+
+.user__desc {
+  font-size: 17px;
+  line-height: 21px;
+}
+
+.user:hover {
+  color: #fbd784;
+}
+
+/* Hero */
+
+.hero {
+  max-width: 950px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 15px;
+
+  display: block;
+  color: #ffffff;
+
+  transition: transform 0.2s cubic-bezier(0.18, -0.315, 0.18, 1.65);
+}
+
+.hero:hover {
+  transform: translateY(-5%);
+}
+
+.hero__category {
+  position: relative;
+  padding-left: 104px;
+  margin-bottom: 32px;
+
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.222;
+  letter-spacing: 6px;
+  color: #fbd784;
+}
+
+.hero__category::before {
+  display: block;
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 72px;
+  background-color: #fbd784;
+
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hero__title {
+  margin-bottom: 32px;
+  font-family: "Playfair Display", serif;
+  font-size: 88px;
+  font-weight: 600;
+  line-height: 1.136;
+}
+
+.hero__scroll {
+  display: inline-block;
+  padding-right: 32px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.222;
+  text-align: left;
+
+  position: relative;
+}
+
+.hero__scroll::after {
+  display: block;
+  content: "";
+  background-image: url(./../img/icons/arrow_down.svg);
+  height: 24px;
+  width: 16px;
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 107px;
+}
+
+/* Main */
+
+.container {
+  max-width: 1462px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.article {
+  margin-bottom: 200px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.article:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.article__text {
+  max-width: 632px;
+  padding-left: 150px;
+  position: relative;
+}
+
+.article__text::before {
+  display: block;
+  content: attr(data-number);
+  height: 240px;
+  width: 240px;
+
+  position: absolute;
+  top: -103px;
+  left: 90px;
+
+  font-size: 240px;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.3);
+
+  text-align: left;
+}
+
+.article__suptitle {
+  position: relative;
+  padding-left: 96px;
+  margin-bottom: 27px;
+
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.222;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: #fbd784;
+}
+
+.article__suptitle::before {
+  display: block;
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 72px;
+  background-color: #fbd784;
+
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.article__title {
+  width: 555px;
+  margin-bottom: 27px;
+
+  font-family: "Playfair Display", serif;
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.article__desc {
+  width: 632px;
+  margin-bottom: 27px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.78;
+}
+
+.article__read-more {
+  display: inline-block;
+  position: relative;
+  padding-right: 40px;
+
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.222;
+  color: #fbd784;
+  text-transform: lowercase;
+}
+
+.article__read-more::after {
+  display: block;
+  content: "";
+  background-image: url(./../img/icons/arrow_right.svg);
+  height: 16px;
+  width: 24px;
+
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.article__img {
+  display: block;
+}
+
+.hiking__text {
+  padding-left: 0;
+}
+
+.hiking__text::before {
+  left: -60px;
+}
+
+/* Footer */
+
+.footer {
+  padding-bottom: 120px;
+}
+
+.footer__row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__copyright-logo {
+  margin-bottom: 24px;
+}
+
+.footer__copyright-text {
+  max-width: 303px;
+  margin-bottom: 122px;
+
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.78;
+}
+
+.footer__copyright-terms {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.78;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.footer__nav-wrapper {
+  display: flex;
+}
+
+.footer__nav + .footer__nav {
+  margin-left: 212px;
+}
+
+.footer__nav {
+  max-width: 200px;
+}
+
+.footer__nav-title {
+  margin-bottom: 24px;
+
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.34;
+  color: #fbd784;
+}
+
+.list__item {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.78;
+}
+
+.list__item + .list__item {
+  margin-top: 16px;
+}
+
+.list__link {
+  position: relative;
+  color: #ffffff;
+}
+
+.list__link::after {
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+
+  display: block;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  opacity: 0;
+
+  transition: all 0.2s ease-in;
+}
+
+.list__link:hover::after {
+  bottom: -5px;
+  opacity: 1;
+}
